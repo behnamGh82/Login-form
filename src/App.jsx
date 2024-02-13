@@ -11,7 +11,9 @@ export default function App() {
 function Forms() {
   const [loginPage, setLoginPage] = useState(true);
   const [mobile, setMobile] = useState("");
-  const [validate, setValidate] = useState(true);
+  const [password, setPassword] = useState("");
+  const [validateMobile, setValidateMobile] = useState(true);
+  const [validatePassword, setValidatePassword] = useState(true);
   const phoneRegex =
     /^(?:(?:(?:\\+?|00)(98))|(0))?((?:90|91|92|93|99)[0-9]{8})$/;
   const handlePage = () => {
@@ -20,12 +22,20 @@ function Forms() {
   const handleMobile = (event) => {
     if (phoneRegex.test(event.target.value)) {
       setMobile(event.target.value);
-      setValidate(true);
+      setValidateMobile(true);
     } else {
-      setValidate(false);
+      setValidateMobile(false);
     }
   };
-  console.log(mobile);
+  const handlePassword = (event) => {
+    if (String(event.target.value).length > 8) {
+      setPassword(event.target.value);
+      setValidatePassword(true);
+    } else {
+      setValidatePassword(false);
+    }
+  };
+  console.log(password);
   return (
     <div className=" w-3/4 lg:w-2/6  m-auto h-3/4 bg-[#f1f7fe] shadow-lg rounded-3xl relative">
       <div className="w-16 h-16 bg-[#3d4785] absolute -top-6 -right-[20px] rounded-full border-8 border-[#f1f7fe] ">
@@ -44,7 +54,7 @@ function Forms() {
                 placeholder="**** *** **09"
                 onInput={handleMobile}
               />
-              {validate == false && (
+              {validateMobile == false && (
                 <p className="text-xs text-red-500">موبایل معتبر نیست</p>
               )}
             </div>
@@ -57,7 +67,11 @@ function Forms() {
                 type="password"
                 className="focus:outline-none"
                 placeholder="*******"
+                onInput={handlePassword}
               />
+              {validatePassword == false && (
+                <p className="text-xs text-red-500">طول رمز حداقل 8 کارکتر</p>
+              )}
             </div>
           </div>
           <button className="w-2/3 h-16  bg-[#3d4785] text-white rounded-full">
@@ -84,7 +98,7 @@ function Forms() {
                 placeholder="**** *** **09"
                 onInput={handleMobile}
               />
-              {validate == false && (
+              {validateMobile == false && (
                 <p className="text-xs text-red-500">موبایل معتبر نیست</p>
               )}
             </div>
@@ -97,7 +111,11 @@ function Forms() {
                 type="password"
                 className="focus:outline-none"
                 placeholder="*******"
+                onInput={handlePassword}
               />
+              {validatePassword == false && (
+                <p className="text-xs text-red-500">طول رمز حداقل 8 کارکتر</p>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-3 bg-white w-2/3 h-20 rounded-xl px-4 shadow-lg">
