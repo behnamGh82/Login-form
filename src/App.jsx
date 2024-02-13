@@ -14,7 +14,7 @@ function Forms() {
         <img src={FarawinLogo} alt="" />
       </div>
       {/* login form */}
-      <div className="flex flex-col place-items-center pt-28  gap-12 h-full">
+      {/* <div className="flex flex-col place-items-center pt-28  gap-12 h-full">
         <div className="flex flex-col gap-3 bg-white w-2/3 h-20 rounded-xl px-4 shadow-lg">
           <label className="text-[#8f8f8f]"> موبایل</label>
           <div className="flex gap-2 place-items-center ">
@@ -42,6 +42,47 @@ function Forms() {
         </button>
         <a className="underline decoration-indigo-500 text-indigo-500 hover:text-xl">
           ثبت نام
+        </a>
+      </div> */}
+      <div className="flex flex-col place-items-center pt-20  gap-12 h-full">
+        <div className="flex flex-col gap-3 bg-white w-2/3 h-20 rounded-xl px-4 shadow-lg">
+          <label className="text-[#8f8f8f]"> موبایل</label>
+          <div className="flex gap-2 place-items-center ">
+            <i className="fa fa-phone text-[#8f8f8f]"></i>
+            <input
+              type="text"
+              className="focus:outline-none"
+              placeholder="**** *** **09"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 bg-white w-2/3 h-20 rounded-xl px-4 shadow-lg">
+          <label className="text-[#8f8f8f]"> رمز</label>
+          <div className="flex gap-2 place-items-center ">
+            <i className="fa fa-lock text-[#8f8f8f]"></i>
+            <input
+              type="password"
+              className="focus:outline-none"
+              placeholder="*******"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 bg-white w-2/3 h-20 rounded-xl px-4 shadow-lg">
+          <label className="text-[#8f8f8f]">تکرار رمز</label>
+          <div className="flex gap-2 place-items-center ">
+            <i className="fa fa-lock text-[#8f8f8f]"></i>
+            <input
+              type="password"
+              className="focus:outline-none"
+              placeholder="*******"
+            />
+          </div>
+        </div>
+        <button className="w-2/3 h-16  bg-[#3d4785] text-white rounded-full">
+          ثبت نام
+        </button>
+        <a className="underline decoration-indigo-500 text-indigo-500 hover:text-xl">
+          ورود
         </a>
       </div>
     </div>
