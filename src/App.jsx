@@ -12,7 +12,7 @@ function Forms() {
   const [loginPage, setLoginPage] = useState(true);
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordRepite, setPasswordRepite] = useState(true);
+  const [passwordRepite, setPasswordRepite] = useState(false);
   const [validateMobile, setValidateMobile] = useState(true);
   const [validatePassword, setValidatePassword] = useState(true);
   const phoneRegex =
@@ -81,7 +81,10 @@ function Forms() {
               )}
             </div>
           </div>
-          <button className="w-2/3 h-16  bg-[#3d4785] text-white rounded-full">
+          <button
+            disabled={mobile === "" || password === ""}
+            className="w-2/3 h-16  bg-[#3d4785] text-white rounded-full disabled:bg-slate-400"
+          >
             ورود
           </button>
           <a
@@ -140,7 +143,12 @@ function Forms() {
               )}
             </div>
           </div>
-          <button className="w-2/3 h-16  bg-[#3d4785] text-white rounded-full">
+          <button
+            disabled={
+              mobile === "" || password === "" || passwordRepite === false
+            }
+            className="w-2/3 h-16  bg-[#3d4785] text-white rounded-full disabled:bg-slate-400"
+          >
             ثبت نام
           </button>
           <a
